@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>자격증 게시판</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1 class="title">자격증 게시판</h1>
+
+<!-- 네비게이션 바 -->
+<div class="navbar">
+    <a th:href="@{/certificates}" style="text-decoration: none;">
+        메인 페이지
+    </a>
+    <a href="/write">글쓰기 페이지</a>
+    <a href="/register">회원가입</a>
+    <a href="/login">로그인</a>
+</div>
+
+<!-- 콘텐츠 -->
+<div class="container" th:each="faculty, fStat : ${faculties}">
+    <div class="faculty-box">
+        <h2 th:text="${faculty.facultyName}">학부 이름</h2>
+
+        <div th:each="dept , dStat : ${faculty.departments}">
+            <div th:each="major , mStat : ${dept.majors}">
+                <!-- 전공 이름 -->
+                <h4 th:text="${major.majorName}"
+                    th:onclick="'toggleCertificates(\'cert-' + ${fStat.index} + '-' + ${dStat.index} + '-' + ${mStat.index} + '\')'"
+                    style="cursor: pointer;">전공 이름
+                </h4>
+
+                <!-- 자격증 목록 -->
+                <div th:id="'cert-' + ${fStat.index} + '-' + ${dStat.index} + '-' + ${mStat.index}"
+                    style="display: none; padding-left: 5px;">
+                    <div th:each="cert : ${major.certificates}">
+                        <a class = "certificate-link" th:href="@{'/certificates/' + ${cert.certificateId}}" th:text="${cert.certificateName}">자격증 이름</a>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleCertificates(id) {
+        const el = document.getElementById(id);
+        el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+</script>
+</body>
+</html>

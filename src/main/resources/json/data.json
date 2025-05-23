@@ -1,0 +1,101 @@
+[ {
+  "facultyId": 1,
+  "facultyName": "공학부",
+  "departments": [
+    {
+      "departmentId": 2,
+      "departmentName": "기계공학과",
+      "majors": [
+        {
+          "majorId": 1,
+          "majorName": "기계시스템전공",
+          "mapId": 19,
+          "certificates": [
+            {
+              "certificateName": "일반 기계기사",
+              "detail": "고도의 기술집약산업인 기계산업의 기계설계 분야에 종사할 전문기술인력을 양성하기 위한 자격입니다."
+            },
+            {
+              "certificateName": "기계설계기사",
+              "detail": "기계설계분야에 필요한 전문고급 기술인력을 양성하고자 기계공정 설계와 치공구설계를 통합하기 위한 자격입니다."
+            }]
+        } , {
+          "majorId" : 2,
+          "majorName" : "소방설비안전전공",
+          "mapId" : 20,
+          "certificates": [
+            {
+              "certificateName": "소방설비기사(기계)",
+              "detail": "소방시설공사 또는 정비업체 등에서 소방시설공사의 설계도면을 작성하기 위한 자격입니다."
+            },
+            {
+              "certificateName": "소방설비기사(전기)",
+              "detail": "화재감지기, 비상방송, 자동화재탐지설비, 누전경보기 등 전기식 소방설비의 설계·시공·감리 및 점검하기 위한 자격입니다."
+            },
+            {
+              "certificateName": "위험물산업기사",
+              "detail": "소방법시행령에 규정된 위험물의 저장, 제조, 취급조에서 위험물을 안전하도록 취급하고 일반작업자를 지시·감독하며, 각 설비 및 시설에 대한 안전점검 실시, 재해발생시 응급조치 실시 등 위험물에 대한 보안, 감독 업무 수행을 하는 자격입니다."
+            }]
+        }
+      ]
+    }, {
+      "departmentId" : 3,
+      "departmentName" : "전기공학과",
+      "majors" : [ {
+        "majorId" : 3,
+        "majorName" : "전기공학전공",
+        "mapId" : 21 ,
+        "certificates": [
+          {
+            "certificateName": "전기기사",
+            "detail": "발전소, 변전소, 배전설비 등 전기설비의 설계, 감리, 시공 및 유지보수하는 자격입니다."
+          },
+          {
+            "certificateName": "전기산업기사",
+            "detail": "전기설비 시공 및 유지보수 보조하는 자격입니다."
+          },
+          {
+            "certificateName": "전기공사기사",
+            "detail": "물 내 전기 배선 및 전기설비 시공 감독 및 감리하는 자격입니다."
+          }]
+      }, {
+        "majorId" : 4,
+        "majorName" : "전자공학전공",
+        "mapId" : 22 ,
+        "certificates": [
+          {
+            "certificateName": "전자기사",
+            "detail": "전자회로 설계, 통신장비 개발, 전자 시스템 유지보수 및 테스트하는 자격입니다."
+          },
+          {
+            "certificateName": "무선설비기사",
+            "detail": "무선 통신 시스템 설계·시공·운영하는 자격입니다."
+          },
+          {
+            "certificateName": "정보통신기사",
+            "detail": "정보통신 네트워크 설계/시공/유지보수하는 자격입니다."
+          }]
+      } ]
+    },
+    {
+      "departmentId": 4,
+      "departmentName": "컴퓨터공학과",
+      "majors": [
+        {
+          "majorId": 5,
+          "majorName": "컴퓨터소프트웨어전공",
+          "mapId": 23,
+          "certificates": [
+            {
+              "certificateName": "정보처리기사",
+              "detail": "정보처리기사는 컴퓨터 시스템의 분석, 설계, 운영 및 유지보수 능력을 검정하는 국가기술자격입니다."
+            },
+            {
+              "certificateName": "GTQ",
+              "detail": "GTQ는 그래픽 기술 활용 능력을 검정하는 자격증입니다."
+            } ]
+        } ]
+    } ]
+} ]
+
+
