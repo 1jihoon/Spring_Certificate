@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${certificate.certificateName} + ' 상세 정보'">자격증 상세</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <h1 class="title">자격증 게시판</h1>
 
+<!-- detail.html -->
 <!-- 네비게이션 바 -->
 <div class="navbar">
     <a th:href="@{/certificates}" style="text-decoration: none;">
@@ -19,8 +20,29 @@
     <a href="/login">로그인</a>
 </div>
 
+<span th:if="${session.loginId != null}">
+        <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
+        <a th:href="@{/logout}">로그아웃</a>
+</span>
+
 
 <h2 th:text="${certificate.certificateName}">자격증 이름</h2>
-<p th:text="${certificate.detail}">설명 내용</p>
+<p th:text="${certificate.detail}">자격증 설명</p>
+
+<!-- 자격증 이미지 -->
+<div th:if="${certificate.images != null and #lists.size(certificate.images) > 0}">
+    <h4>관련 이미지</h4>
+    <div th:each="img : ${certificate.images}">
+        <img th:src="@{${img.url}}" th:alt="${img.altText}" style="max-width: 300px; padding: 5px;" />
+    </div>
+</div>
+
+<!-- 자격증 링크 -->
+<div th:if="${certificate.links != null and #lists.size(certificate.links) > 0}">
+    <h4>관련 링크</h4>
+    <div th:each="link : ${certificate.links}">
+        <a th:href="@{${link.url}}" th:text="${link.description}" target="_blank">링크 설명</a>
+    </div>
+</div>
 </body>
 </html>

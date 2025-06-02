@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>로그인</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>로그인</h1>
+
+<div class="navbar">
+    <a th:href="@{/certificates}" style="text-decoration: none;">
+        메인 페이지
+    </a>
+    <a href="/write">글쓰기 페이지</a>
+    <a href="/register">회원가입</a>
+    <a href="/login">로그인</a>
+</div>
+
+<!-- 🔽 로그인 실패 시 에러 메시지 표시 -->
+<div th:if="${errorMessage}" style="color:red; font-weight:bold; margin-bottom:10px;">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+<form action="/login" method="post" th:object="${loginDto}">
+    <label>ID: <input type="text" th:field="*{id}" /></label><br>
+    <label>Password: <input type="password" th:field="*{password}" /></label><br>
+    <button type="submit">로그인</button>
+</form>
+</body>
+</html>

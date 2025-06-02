@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -26,4 +28,9 @@ public class Certificate {
     @JoinColumn(name = "major_id", nullable = true)
     private Major major;
 
+    @OneToMany(mappedBy = "certificate", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CertificateLink> links;
+
+    @OneToMany(mappedBy = "certificate" , cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CertificateImage> images;
 }
