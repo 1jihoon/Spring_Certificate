@@ -1,0 +1,21 @@
+<!-- templates/certificate/list.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>자격증 목록</title>
+</head>
+<body>
+
+<!-- certificate/list.html -->
+<div th:fragment="certificateList(certificates)">
+    <div th:each="cert : ${certificates}">
+        <a class="certificate-link"
+           th:href="@{'/certificates/' + ${cert.certificateId}}"
+           th:text="${cert.certificateName}">자격증 이름</a>
+    </div>
+</div>
+
+
+</body>
+</html>
