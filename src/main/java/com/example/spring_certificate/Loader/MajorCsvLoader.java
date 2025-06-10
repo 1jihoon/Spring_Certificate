@@ -30,6 +30,7 @@ public class MajorCsvLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] tokens = line.split(",", -1);
+
                 if (tokens.length >= 3) {
                     Major major = new Major();
                     major.setId(Long.parseLong(tokens[0].trim()));

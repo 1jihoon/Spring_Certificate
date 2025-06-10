@@ -11,5 +11,4 @@ public class FacultyDto {
     private Long facultyId;
     private String facultyName;
     private List<DepartDto> departments;
-
 }

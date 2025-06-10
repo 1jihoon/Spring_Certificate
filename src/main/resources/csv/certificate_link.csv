@@ -1,2 +1,214 @@
-﻿certificateName,url,description
-일반기계기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1021,일반기계기사 소개
+﻿# --- 일반기계기사 ---
+certificateName,url,description
+일반기계기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1021,일반기계기사 일정 및 소개
+일반기계기사,https://www.comcbt.com/xe/ny,필기 기출문제(2022년까지)
+일반기계기사,https://blog.naver.com/se_302na/223373221931,실기 응시요령(네이버 블로그 정리글)
+# ---건설기계설비기사 ---
+건설기계설비기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1040,건설기계기사 일정 및 소개
+건설기계설비기사,https://www.comcbt.com/xe/e7#google_vignette,필기 기출문제(2021년까지)
+건설기계설비기사,https://blog.naver.com/dexoneq/223631096449,실기 응시요령(네이버 블로그 정리글)
+# --- 소방설비기사(기계) ---
+소방설비기사(기계),https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1900,소방설비기사(기계) 일정 및 소개
+소방설비기사(기계),https://www.comcbt.com/xe/nd,필기 기출문제(2023년까지)
+소방설비기사(기계),https://ehgnsj.tistory.com/2,실기 응시요령(티스토리 정리글)
+# --- 소방설비기사(전기) ---
+소방설비기사(전기),https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1910,소방설비기사(전기) 일정 및 소개
+소방설비기사(전기),https://www.comcbt.com/xe/nc,필기 기출문제(2022년까지)
+소방설비기사(전기),https://blog.naver.com/zagiya76/223483148960,실기 응시요령(네이버 블로그 정리글)
+# --- 위험물 산업기사 ---
+위험물산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2121,위험물산업기사 일정 및 소개
+위험물산업기사,https://www.comcbt.com/xe/ng,필기 기출문제(2020년까지)
+위험물산업기사,https://blog.naver.com/subin_s_humteresting/223621728570,실기 응시요령(네이버 블로그 정리글)
+# --- 전기기사 ---
+전기기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1150,전기기사 일정 및 소개
+전기기사,https://www.comcbt.com/xe/kt,필기 기출문제(2022년까지)
+전기기사,https://careercatch.tistory.com/4,실기 응시요령(티스토리 정리글)
+# --- 전기산업기사 ---
+전기산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2140,전기산업기사 일정 및 소개
+전기산업기사,https://www.comcbt.com/xe/jw,필기 기출문제(2020년까지)
+전기산업기사,https://m.blog.naver.com/gcmkty/223352388200,실기 응시요령(네이버 블로그 정리글)
+# --- 전기공사기사 ---
+전기공사기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1160&gSite=Q&gId,전기공사기사 일정 및 소개
+전기공사기사,https://www.comcbt.com/xe/ni,필기 기출문제(2022년까지)
+전기공사기사,https://blog.naver.com/wjdrk1225/223593865457,실기 응시요령(네이버 블로그 정리글)
+# --- 전자기사 ---
+전자기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1170,전자기사 일정 및 소개
+전자기사,https://www.comcbt.com/xe/bf,필기 기출문제(2022년까지)
+전자기사,https://junggiman.tistory.com/5,실기 응시요령(티스토리 정리글)
+# --- 무선설비기사 ---
+무선설비기사,https://blog.naver.com/bread082/223693978683,무선설비기사 일정 및 소개
+무선설비기사,https://www.comcbt.com/xe/b8,필기 기출문제(2023년까지)
+무선설비기사,https://blog.naver.com/antkhj96/222883322616,실기 응시요령(네이버 블로그 정리글)
+# --- 정보통신기사 ---
+정보통신기사,https://muns-da2.tistory.com/542,정보통신기사 일정 및 소개
+정보통신기사,https://www.comcbt.com/xe/cey,필기 기출문제(2023년까지)
+정보통신기사,https://muns-da2.tistory.com/385,실기 응시요령(티스토리 정리글)
+# --- 정보처리기사 ---
+정보처리기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1320,정보처리기사 일정 및 소개
+정보처리기사,https://www.comcbt.com/xe/iz,필기 기출문제(2022년까지)
+정보처리기사,https://chobopark.tistory.com/460,실기 응시요령(티스토리 정리글)
+# --- GTQ ---
+GTQ,https://www.sbsart.com/edu/certificate/gtq_cer.asp,GTQ 일정 및 소개
+GTQ,https://www.sinagong.co.kr/pds/013003001/past-exams,1급 포토샵 기출문제
+GTQ,https://m.blog.naver.com/e_gnos/222847494279,1급 공부요령(네이버 블로그 정리글)
+# --- 게임기획전문가 ---
+게임기획전문가,https://www.kgq.or.kr/service/main.do,게임기획전문가 일정 및 소개
+게임기획전문가,https://snow-young.tistory.com/345,필기 기출문제(2022년까지)
+게임기획전문가,https://blog.naver.com/hapo20/223530280798,실기 응시요령(네이버 블로그 정리글)
+# --- 게임그래픽전문가 ---
+게임그래픽전문가,https://www.kgq.or.kr/service/main.do,게임그래픽전문가 일정 및 소개
+게임그래픽전문가,https://www.kgq.or.kr/service/rslt/pb_list.do,필기 기출문제(2025년까지)
+게임그래픽전문가,https://snow-young.tistory.com/344,실기 응시요령(티스토리 정리글)
+# --- 빅데이터분석기사 ---
+빅데이터분석기사,https://www.dataq.or.kr/www/accept/schedule.do,빅데이터분석기사 일정 및 소개
+빅데이터분석기사,https://m.blog.naver.com/buksamfight/223382218779,필기 기출문제(2025년까지)
+빅데이터분석기사,https://data-fox.tistory.com/42,실기 응시요령(티스토리 정리글)
+# --- 인공지능산업기사 ---
+인공지능산업기사,https://www.epassbiz.com/Customer/news.asp?bmode=detail&link_idx=10783&bg_idx=5&bcs_idx=&cate_idx=0&intB_idx=13705,인공지능산업기사 일정 및 소개
+인공지능산업기사,https://economy-for-freedom.tistory.com/74,기출문제
+인공지능산업기사,https://blog.naver.com/agapeuni/223840915437?trackingCode=rss,실기 응시요령(네이버 블로그 정리글)
+# --- 제품디자인산업기사 ---
+제품디자인산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2432,제품디자인산업기사 일정 및 소개
+제품디자인산업기사,https://www.comcbt.com/xe/cct,필기 기출문제(2021년까지)
+제품디자인산업기사,https://anyhowlabs.tistory.com/entry/%EC%A0%9C%ED%92%88%EB%94%94%EC%9E%90%EC%9D%B8%EA%B8%B0%EC%82%AC-%ED%98%81%EC%8B%A0%EC%A0%81%EC%9D%B8-%EC%A0%9C%ED%92%88-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9D%B4%EB%81%84%EB%8A%94-%EC%A0%84%EB%AC%B8%EA%B0%80%EC%9D%98-%EA%B8%B8,실기 응시요령(티스토리 정보글)
+# --- 시각디자인산업기사 ---
+시각디자인산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2434,시각디자인산업기사 일정 및 소개
+시각디자인산업기사,https://www.comcbt.com/xe/fb,필기 기출문제(2020년까지)
+시각디자인산업기사,https://m.blog.naver.com/lacerta_1579/222783558586,실기 응시요령(네이버 블로그 정리글)
+# --- 컴퓨터그래픽기능사 ---
+컴퓨터그래픽기능사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=7796,컴퓨터그래픽기능사 일정 및 소개
+컴퓨터그래픽기능사,https://www.comcbt.com/xe/j5,필기 기출문제(2018년까지)
+컴퓨터그래픽기능사,https://cream-bread.tistory.com/202,실기 응시요령(티스토리 정보글)
+# --- 패션디자인산업기사 ---
+패션디자인산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2301,패션디자인산업기사 일정 및 소개
+패션디자인산업기사,https://www.comcbt.com/xe/c8#google_vignette,필기 기출문제(2020년까지)
+패션디자인산업기사,https://blog.naver.com/kao_story/223658571055,실기 응시요령(네이버 블로그 정리글)
+# --- 의류기사 ---
+의류기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1301,의류기사 일정 및 소개
+의류기사,https://www.comcbt.com/xe/ccf,필기 기출문제(2021년까지)
+의류기사,https://korea-typewriter.tistory.com/entry/%EC%9D%98%EB%A5%98%EA%B8%B0%EC%82%AC-%ED%95%B5%EC%8B%AC%EC%9A%94%EC%95%BD-%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C,실기 응시요령(티스토리 정보글)
+# --- 실내건축산업기사 ---
+실내건축산업기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2282&gSite=Q&gId=,실내건축산업기사 일정 및 소개
+실내건축산업기사,https://www.comcbt.com/xe/dp,필기 기출문제(2020년까지)
+실내건축산업기사,https://m.blog.naver.com/hyejin6721/223013461871,실기 응시요령(네이버 블로그 정리글)
+# --- 멀티미디어콘텐츠제작전문가 ---
+멀티미디어콘텐츠제작전문가,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=9545,멀티미디어콘텐츠제작전문가 일정 및 소개
+멀티미디어콘텐츠제작전문가,https://www.comcbt.com/xe/d4,필기 기출문제(2022년까지)
+멀티미디어콘텐츠제작전문가,https://blog.naver.com/drawing109/223436278026,실기 응시요령(네이버 블로그 정리글)
+# --- 옥외광고사 ---
+옥외광고사,https://hankoaa.cafe24.com/sub05/sub01-10.php,옥외광고사 일정 및 소개
+옥외광고사,https://hankoaa.cafe24.com/sub05/sub01-6.php,필기 기출문제(2025년까지)
+옥외광고사,https://sunwoo9713.tistory.com/entry/%EC%98%A5%EC%99%B8%EA%B4%91%EA%B3%A0%EC%82%AC-%EC%9E%90%EA%B2%A9%EC%A6%9D-%EB%8F%85%ED%95%99%EC%9C%BC%EB%A1%9C-%EC%B7%A8%EB%93%9D%ED%95%98%EA%B8%B0-%EC%A0%84%EC%9E%90%EC%B1%85-%EC%B6%94%EC%B2%9C,실기 응시요령(티스토리 정리글)
+# --- 영상편집전문가 ---
+영상편집전문가,http://www.kavpc.or.kr/qna/schedule.asp,영상편집전문가 일정 및 소개(불규칙적이어서 25년엔 소식이 없음)
+영상편집전문가,https://www.comcbt.com/xe/hf,필기 2급 기출문제(2019년까지)
+영상편집전문가,https://www.kinz.kr/subject/2261,필기 1급 기출문제(2019년까지)
+영상편집전문가,https://blog.naver.com/starsihara/223531552170,응시요령(네이버 블로그 정리글)
+# --- ACP ---
+ACP,https://blog.naver.com/someday0191/223109740404,ACP 일정 및 소개
+ACP,https://blog.naver.com/vickylee0501/221121401407,실기 기출문제(2017년까지)
+ACP,https://blog.naver.com/bubblebabble/222733451041,응시요령(네이버 블로그 정리글)
+# --- 문화예술교육사 ---
+문화예술교육사,https://www.arte.or.kr/business/professional/license/intro/index.do,문화예술교육사 일정 및 소개
+문화예술교육사,https://m.blog.naver.com/choopha0501/222231110048,공부법
+문화예술교육사,https://iscu.tistory.com/2195,응시요령(티스토리 정리글)
+# --- 영양사 ---
+영양사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=0723,영양사 일정 및 소개
+영양사,https://mnbgtyui.tistory.com/613,기출문제(2024년도)
+영양사,https://m.blog.naver.com/hhee5476/223439089699,응시요령(네이버 블로그 정리글)
+# --- 위생사 ---
+위생사,https://mnbgtyui.tistory.com/665,위생사 일정(공식적으로 나오진 않았지만 이 정도로 예상됨)
+위생사,https://mnbgtyui.tistory.com/592,기출문제(2024년도)
+위생사,https://itpurej.tistory.com/22,응시요령(티스토리 정보글)
+# --- 의료정보관리사 ---
+의료정보관리사,https://blog.naver.com/pso164/223627233385,의료정보관리사 일정(아직 안 나왔지만 작년 일정과 비슷하다고 예상됨)
+의료정보관리사,https://blog.naver.com/lena458/223729750791,기출문제(2025년도)
+의료정보관리사,https://blog.naver.com/wjdgyeel/223702943640,응시요령(네이버 블로그 정리글)
+# --- 병원행정사 ---
+병원행정사,https://www.simsa.kr/02_notice/notice_01.php?md=view&no=352&page=1&refer=,병원행정사 일정
+병원행정사,https://knowledgeseek.tistory.com/entry/%EB%B3%91%EC%9B%90%ED%96%89%EC%A0%95%EC%82%AC-%EC%8B%9C%ED%97%98-%EC%9D%BC%EC%A0%95-%EC%9D%91%EC%8B%9C%EC%9E%90%EA%B2%A9-%EB%B0%8F-%EC%8B%9C%ED%97%98-%EA%B3%BC%EB%AA%A9-%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0#google_vignette,기출문제와 간단한 소개(티스토리 정보글)
+병원행정사,https://blog.naver.com/ryuhyerim225/223683996091,응시요령(네이버 블로그 정리글)
+# --- 작업치료사 ---
+작업치료사,https://www.kuksiwon.or.kr/subcnt/c_2015/1/view.do?seq=7&itm_seq=13,작업치료사 일정(작년과 비슷한 시기에 시행될것으로 보임)
+작업치료사,https://m.blog.naver.com/dada7577/222196242751,준비과정 및 후기 1
+작업치료사,https://blog.naver.com/wns7766/222196111927,준비과정 및 후기 2
+# --- 동물간호복지사 ---
+동물간호복지사,https://vt-exam.or.kr/1018,일정은 곧 있으면 올라올 예정
+동물간호복지사,https://blog.naver.com/panmuneducation/223837603217,기출문제에 대비한 정보들
+동물간호복지사,https://pet.ggonstips.com/entry/%EB%8F%99%EB%AC%BC-%EA%B0%84%ED%98%B8-%EB%B3%B5%EC%A7%80%EC%82%AC%EB%8F%99%EB%AC%BC-%EB%B3%B4%EA%B1%B4%EC%82%AC-%ED%95%98%EB%8A%94-%EC%9D%BC%EA%B3%BC-%EC%9E%90%EA%B2%A9%EC%A6%9D-%EC%B7%A8%EB%93%9D-%EB%B0%A9%EB%B2%95,응시요령(티스토리 정보글)
+# --- 응급구조사 ---
+응급구조사,https://www.emt.or.kr/emrrsc/emrrsc_base/emrrsc_main/emt_nation_test2,일정은 곧 있으면 올라올 예정
+응급구조사,https://blog.naver.com/jukim7202/223641448534,자격증 공부법
+응급구조사,https://blog.naver.com/hsny0330/223684341691,필기 후기
+# --- 화학분석기능사 ---
+화학분석기능사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=6560,화학분석기능사 일정 및 소개
+화학분석기능사,https://www.comcbt.com/xe/eo,필기 기출문제(2018년까지)
+화학분석기능사,https://blog.naver.com/kuhminsa/223636939084,응시요령(네이버 블로그 정리글)
+# --- 바이오화학제품제조기사 ---
+바이오화학제품제조기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1800,바이오화학제품제조기사 일정 및 소개
+바이오화학제품제조기사,https://www.comcbt.com/xe/ro,필기 기출문제(2022년까지)
+바이오화학제품제조기사,https://m.blog.naver.com/zamong219/222879163244,응시요령(네이버 블로그 정리글)
+# --- 화공기사 ---
+화공기사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1110,화공기사 일정 및 소개
+화공기사,https://www.comcbt.com/xe/cev,필기 기출문제(2022년까지)
+화공기사,https://m.blog.naver.com/qkrwlgus125/223486021703,실기 응시요령(네이버 블로그 정리글)
+# --- 미용사(메이크업) ---
+미용사(메이크업),https://updokorea.com/entry/2025%EB%85%84-%EB%AF%B8%EC%9A%A9%EC%82%AC-%EC%9E%90%EA%B2%A9%EC%A6%9D-%EC%9D%BC%EC%A0%95-%EB%B0%8F-%EC%A4%80%EB%B9%84-%EA%B0%80%EC%9D%B4%EB%93%9C,피부 미용사 일정 및 소개
+미용사(메이크업),https://blog.naver.com/new52spring/223373992113,필기 공부법
+미용사(메이크업),https://m.blog.naver.com/pso164/223291547463,실기 응시요령(네이버 블로그 정리글)
+# --- 화장품제조관리사 ---
+화장품제조관리사,https://license.korcham.net/co/examguide03.do?cd=0202&mm=34,화장품제조관리사 일정 및 소개
+화장품제조관리사,https://hwagit-zzoo.tistory.com/category/%EB%A7%9E%EC%B6%A4%ED%98%95%ED%99%94%EC%9E%A5%ED%92%88%EC%A1%B0%EC%A0%9C%EA%B4%80%EB%A6%AC%EC%82%AC/%EC%98%88%EC%83%81%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C,기출문제
+화장품제조관리사,https://blog.naver.com/67bye/223155453792,응시요령(네이버 블로그 정리글)
+# --- 사회복지사 1급 ---
+사회복지사 1급,https://www.q-net.or.kr/crf005.do?id=crf00503&gSite=L&gId=52,사회복지사 일정(1번 있는 시험이라 올해는 끝났고 내년에 있을 예정)
+사회복지사 1급,https://www.comcbt.com/xe/f1,필기 기출문제(2024년까지)
+사회복지사 1급,https://blog.naver.com/wsj2687/223392141315,공부법(네이버 블로그 정리글)
+# --- 재활운동전문가 ---
+재활운동전문가,https://www.nscakorea.com/notice/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjc6ImtleXdvcmQiO3M6Njoi7J287KCVIjt9&bmode=view&idx=137329608&t=board, 재활운동전문가 일정 및 소개
+재활운동전문가,https://m.blog.naver.com/brainsports/222121822741,알아야 될 정보들(네이버 블로그 정리글)
+재활운동전문가,https://kkumist.tistory.com/entry/NSCA-RES-%EC%9E%AC%ED%99%9C%EC%9A%B4%EB%8F%99%EC%A0%84%EB%AC%B8%EA%B0%80-%EC%8B%9C%ED%97%98-%ED%95%A9%EA%B2%A9-%ED%9B%84%EA%B8%B0,응시요령(티스토리 정보글)
+# --- 반려동물종합관리사 ---
+반려동물종합관리사,https://www.thekkf.or.kr/new_home/05_license/07.companion_animal.php,반려동물종합관리사 일정 및 소개
+반려동물종합관리사,https://m.blog.naver.com/mjj9288/222485692776,기출문제(네이버 블로그 정리글)
+반려동물종합관리사,https://blog.naver.com/hellstudy/223435532945,응시요령(네이버 블로그 정리글)
+# --- 양식조리기능사 ---
+양식조리기능사,https://www.invione.com/board/lic/158?ct=1509&search_type=B,양식조리기능사 일정 및 소개
+양식조리기능사,https://www.comcbt.com/xe/webhaesul/2497646,필기 기출문제
+양식조리기능사,https://blog.naver.com/dreaming__life/223307400865,실기 응시요령(네이버 블로그 정리글)
+# --- 한식조리기능사 ---
+한식조리기능사,https://www.invione.com/board/lic/157,한식조리기능사 일정 및 소개
+한식조리기능사,https://www.comcbt.com/xe/ja,필기 기출문제(2017년까지)
+한식조리기능사,https://m.blog.naver.com/ls_eun/222669328724,실기 응시요령(네이버 블로그 정리글)
+# --- 바리스타(1급) ---
+바리스타(1급),https://www.kca-coffee.org/cms/FrCon/index.do?MENU_ID=1220,바리스타(1급) 일정 및 소개
+바리스타(1급),https://forest4682.tistory.com/118,필기 기출문제(티스토리 정보글)
+바리스타(1급),https://m.blog.naver.com/ojung1129/222435252358,실기 응시요령(네이버 블로그 정리글)
+# --- 제과기능사 ---
+제과기능사,https://www.invione.com/board/lic/153,제과기능사 일정 및 소개
+제과기능사,https://www.comcbt.com/xe/j7,필기 기출문제(2012년까지)
+제과기능사,https://ryucorgi.tistory.com/6,실기 응시요령(티스토리 정보글)
+# --- 관광통역안내사 ---
+관광통역안내사,https://www.q-net.or.kr/crf005.do?id=crf00503&gSite=L&gId=37,관광통역안내사 일정 및 소개
+관광통역안내사,https://www.comcbt.com/xe/cfu,필기 기출문제(2025년까지)
+관광통역안내사,https://m.blog.naver.com/graandayay/222989993090,공부법(네이버 블로그 정리글)
+# --- 호텔서비스사 ---
+호텔서비스사,https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=9665,호텔서비스사 일정 및 소개
+호텔서비스사,https://gukja.net/nexam21,필기 기출문제
+호텔서비스사,https://blog.naver.com/be_yjself/222191180795,응시요령(네이버 블로그 정리글)
+# --- JLPT ---
+JLPT,https://www.japansisa.com/exam/exam_plan?cate=1,JLPT 일정 및 소개
+JLPT,https://m.blog.naver.com/campfire0914/222372958634,기출문제 정리글
+JLPT,https://m.blog.naver.com/kljk16/222481106145,응시요령(네이버 블로그 정리글)
+# --- ERP정보관리사 ---
+ERP정보관리사,https://license.kpc.or.kr/nasec/qlfint/qlfint/selectErpinfomg.do,ERP정보관리사 일정 및 소개
+ERP정보관리사,https://license.kpc.or.kr/nasec/cmm/board/kpcBoard.do?bbsId=BBSMSTR_000000000107,기출문제 정리글
+ERP정보관리사,https://m.blog.naver.com/surumi_/222897158891,응시요령(네이버 블로그 정리글)
+# --- 전산회계 1급 ---
+전산회계 1급,https://license.kacpta.or.kr/m/info/info_diary.aspx,전산회계 1급 일정 및 소개
+전산회계 1급,https://www.comcbt.com/xe/h1,필기 기출문제(2025년까지)
+전산회계 1급,https://blog.naver.com/gcmkty/223064535005,응시요령(네이버 블로그 정리글)
+# --- CS Leaders(서비스경영자격) ---
+CS Leaders(서비스경영자격),https://www.kie.or.kr/kiehomepage/fc/licenceSchedule?licence,CS Leaders(서비스경영자격) 일정
+CS Leaders(서비스경영자격),https://kimyenny.tistory.com/entry/%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9CCS%EC%A0%84%EB%9E%B5%EB%A1%A01,기출문제
+CS Leaders(서비스경영자격),https://m.blog.naver.com/78dydxo/223430829348,응시요령(네이버 블로그 정리글)

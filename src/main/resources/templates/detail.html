@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${certificate.certificateName} + ' 상세 정보'">자격증 상세</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
 
@@ -12,13 +12,12 @@
 <!-- detail.html -->
 <!-- 네비게이션 바 -->
 <div class="navbar">
-    <a th:href="@{/certificates}" style="text-decoration: none;">
-        메인 페이지
-    </a>
-    <a href="/write">글쓰기 페이지</a>
-    <a href="/register">회원가입</a>
-    <a href="/login">로그인</a>
+    <a th:href="@{/certificates}">메인 페이지</a>
+    <a th:href="@{/write}">글쓰기 페이지</a>
+    <a th:href="@{/register}">회원가입</a>
+    <a th:href="@{/login}">로그인</a>
 </div>
+<!--정적일땐 그냥 href를 쓰지만 동적으로 써서 링크가 바뀔 우려가 있을 땐 th:href로 쓰고 되도록이면 언제든 쓸 수 있게 이 습관을 기르자 -->
 
 <span th:if="${session.loginId != null}">
         <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
@@ -26,23 +25,36 @@
 </span>
 
 
-<h2 th:text="${certificate.certificateName}">자격증 이름</h2>
-<p th:text="${certificate.detail}">자격증 설명</p>
+<div class="certificate-section">
+    <div class="certificate-character" th:if="${certificate.characters != null and #lists.size(certificate.characters) > 0}">
+        <h4>아이콘</h4>
+        <div th:each="img : ${certificate.characters}">
+            <img th:src="@{${img.url}}" th:alt="${img.altText}" class="certificate-character.img"/>
+            <small style="font-size: 10px; color: gray;">출처: FlatIcons.com</small>
+        </div>
+    </div>
 
-<!-- 자격증 이미지 -->
-<div th:if="${certificate.images != null and #lists.size(certificate.images) > 0}">
-    <h4>관련 이미지</h4>
-    <div th:each="img : ${certificate.images}">
-        <img th:src="@{${img.url}}" th:alt="${img.altText}" style="max-width: 300px; padding: 5px;" />
+    <div class="certificate-info">
+        <h4>소개</h4>
+        <h2 th:text="${certificate.certificateName}">자격증 이름</h2>
+        <p th:text="${certificate.detail}">자격증 설명</p>
     </div>
 </div>
 
-<!-- 자격증 링크 -->
-<div th:if="${certificate.links != null and #lists.size(certificate.links) > 0}">
+<div class="link-section" th:if="${certificate.links != null and #lists.size(certificate.links) > 0}">
     <h4>관련 링크</h4>
     <div th:each="link : ${certificate.links}">
-        <a th:href="@{${link.url}}" th:text="${link.description}" target="_blank">링크 설명</a>
+        <a th:href="@{${link.url}}" th:text="${link.description}" target="_blank">링크</a>
     </div>
 </div>
+
+<div class="image-section" th:if="${certificate.images != null and #lists.size(certificate.images) > 0}">
+    <h4>도서 이미지</h4>
+    <div th:each="img : ${certificate.images}">
+        <img th:src="@{${img.url}}" th:alt="${img.altText}" />
+    </div>
+</div>
+
+
 </body>
 </html>

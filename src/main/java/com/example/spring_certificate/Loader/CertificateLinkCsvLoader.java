@@ -12,6 +12,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -31,7 +33,11 @@ public class CertificateLinkCsvLoader {
             reader.readLine(); // skip header
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty()) continue; // 빈 줄 무시
+                line = line.trim();
+
+                if(line.isBlank() || line.startsWith("#") || line.contains("certificateName")){
+                    continue;
+                }
 
                 String[] tokens = line.split(",", -1);
                 if (tokens.length < 3) {
@@ -40,8 +46,12 @@ public class CertificateLinkCsvLoader {
 
                 String certificateName = tokens[0].trim(); // certificateId → name
 
-                Certificate cert = certificateRepository.findByName(certificateName)
-                        .orElseThrow(() -> new RuntimeException("자격증 이름 '" + certificateName + "'을 찾을 수 없습니다."));
+                Optional<Certificate> certs = certificateRepository.findByName(certificateName);
+                if (certs.isEmpty()) {
+                    throw new RuntimeException("자격증 이름 '" + certificateName + "'을 찾을 수 없습니다.");
+                }
+                Certificate cert = certs.get(); // 또는 조건에 따라 적절한 것을 선택
+
 
                 CertificateLink link = new CertificateLink();
                 link.setCertificate(cert);

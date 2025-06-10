@@ -1,11 +1,11 @@
 package com.example.spring_certificate.Entity;
 
-import com.example.spring_certificate.Dto.CertificateDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,6 +20,12 @@ public class Major {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    @OneToMany(mappedBy = "major", cascade = CascadeType.ALL)
-    private List<Certificate> certificates;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "major_certificate",
+            joinColumns = @JoinColumn(name = "major_id"),
+            inverseJoinColumns = @JoinColumn(name = "certificate_id")
+    )
+    @OrderBy("name ASC")
+    private Set<Certificate> certificates = new HashSet<>();
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +23,7 @@ public class Department {
     //faculty 테이블의 Id를 외래키로 받아야 되기 때문에 이렇게 쓴다.
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    private List<Major> majors;
+    private List<Major> majors = new ArrayList<>();
     //department 테이블은 1 : N 연관관게에서 주인이라는 뜻이고, major 테이블에서 그 연관관계를 나타낸다.
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)

@@ -5,7 +5,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -24,13 +27,16 @@ public class Certificate {
     @JoinColumn(name = "department_id", nullable = true)
     private Department department;
 
-    @ManyToOne
-    @JoinColumn(name = "major_id", nullable = true)
-    private Major major;
+   /* @ManyToMany(mappedBy = "certificates")
+    private Set<Major> majors = new HashSet<>();*/
+
 
     @OneToMany(mappedBy = "certificate", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CertificateLink> links;
+    private List<CertificateLink> links = new ArrayList<>();
 
     @OneToMany(mappedBy = "certificate" , cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CertificateImage> images;
+    private List<CertificateImage> images = new ArrayList<>();
+
+    @OneToMany(mappedBy = "certificate" , cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CertificateCharacter> characters = new ArrayList<>();
 }

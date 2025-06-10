@@ -8,10 +8,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -31,26 +31,34 @@ public class CertificateImageCsvLoader {
             reader.readLine(); // skip header
             String line;
             while ((line = reader.readLine()) != null) {
+                line = line.trim();
 
-                if (line.trim().isEmpty()) continue; // 빈 줄 무시
-
-                String[] tokens = line.split(",", -1);
-                if (tokens.length < 3) {
+                if (line.isBlank() || line.startsWith("#") || line.contains("certificateName")) {
                     continue;
                 }
 
-                String certificateName = tokens[0].trim(); // certificateId → name
+                String[] tokens = line.split(",", -1);
+                if (tokens.length < 3) continue;
 
-                Certificate cert = certificateRepository.findByName(certificateName)
-                        .orElseThrow(() -> new RuntimeException("자격증 이름 '" + certificateName + "'을 찾을 수 없습니다."));
+                String certificateName = tokens[0].trim();
+                String imageUrl = tokens[1].trim();
+                String altText = tokens[2].trim();
 
+                Optional<Certificate> certs = certificateRepository.findByName(certificateName);
+                if (certs.isEmpty()) {
+                    System.out.println("❌ 매칭 실패: " + certificateName);
+                    continue;
+                }
+
+                Certificate cert = certs.get();
 
                 CertificateImage image = new CertificateImage();
                 image.setCertificate(cert);
-                image.setUrl(tokens[1]);
-                image.setAltText(tokens[2]);
+                image.setUrl(imageUrl);
+                image.setAltText(altText);
 
                 certificateImageRepository.save(image);
+                System.out.println("✅ 저장됨: " + certificateName + " → " + imageUrl);
             }
 
         } catch (IOException e) {

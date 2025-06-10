@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -23,7 +24,7 @@ public class MajorDtoAssembler {
 
         List<CertificateDto> certDtos = certsByMajorId.getOrDefault(major.getId(), List.of()).stream()
                 .map(certificateDtoAssembler::toDto)
-                .toList();
+                .collect(Collectors.toList());
 
         majorDto.setCertificates(certDtos);
         return majorDto;

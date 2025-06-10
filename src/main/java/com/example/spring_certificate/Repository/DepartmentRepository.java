@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
-    // DepartmentRepository
+    /*// DepartmentRepository
     @Query("SELECT d FROM Department d WHERE d.faculty.id IN :facultyIds")
     List<Department> findByFacultyIds(@Param("facultyIds") List<Long> facultyIds);
     //순수 쿼리문 select * from department where faculty_id IN (1,2,3)을 써야 돌아간다.
@@ -17,5 +17,5 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
     //facultyIds란 이름의 파라미터를 못 찾기 때문이다.
 
     @Query("SELECT d FROM Department d WHERE d.faculty IS NULL")
-    List<Department> findByFacultyIsNull();
+    List<Department> findByFacultyIsNull();*/
 }

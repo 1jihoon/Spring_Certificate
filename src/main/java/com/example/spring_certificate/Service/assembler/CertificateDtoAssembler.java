@@ -1,6 +1,5 @@
 package com.example.spring_certificate.Service.assembler;
 
-
 import com.example.spring_certificate.Dto.*;
 import com.example.spring_certificate.Entity.*;
 import org.springframework.stereotype.Component;
@@ -36,8 +35,19 @@ public class CertificateDtoAssembler {
                     return linkDto;
                 }).toList();
 
+        //CharacterDto 매핑
+        List<CertificateCharacterDto> characterDtos = cert.getCharacters().stream()
+                        .map(Character -> {
+                            CertificateCharacterDto characterDto = new CertificateCharacterDto(Character.getUrl(), Character.getAltText());
+                            characterDto.setCertificateCharacterId(Character.getId());
+                            characterDto.setUrl(Character.getUrl());
+                            characterDto.setAltText(Character.getAltText());
+                            return characterDto;
+                        }).toList();
+
         dto.setImages(imageDtos);
         dto.setLinks(linkDtos);
+        dto.setCharacters(characterDtos);
         return dto;
     }
     //toFacultyDto,toDepartmentDto,toMajorDto,toCertificateDto 메소드는 각각 학부 - 학과 - 전공 - 자격증을 넣는 구조를

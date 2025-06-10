@@ -13,4 +13,5 @@ public class CertificateDto {
     private String detail;
     private List<CertificateImageDto> images;
     private List<CertificateLinkDto> links;
+    private List<CertificateCharacterDto> characters;
 }
