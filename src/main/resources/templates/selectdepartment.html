@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>전공 선택</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<h1>학부 / 전공 선택</h1>
+
+<div class="navbar">
+    <a th:href="@{/certificates}">메인 페이지</a>
+    <a th:href="@{/write}">글쓰기 페이지</a>
+    <a th:href="@{/register}">회원가입</a>
+    <a th:href="@{/login}">로그인</a>
+</div>
+
+<div class="container">
+    <div class="post-item">
+    <div class="faculty-box" th:each="faculty : ${faculties}">
+        <h2 th:text="${faculty.facultyName}">학부 이름</h2>
+        <div>
+            <div th:each="dept : ${faculty.departments}">
+                <!-- 전공이 있는 경우 -->
+                <div th:if="${dept.majors != null and dept.majors.size() > 0}">
+                    <div th:each="major : ${dept.majors}">
+                        <a th:href="@{'/posts/major/' + ${major.majorId}}"
+                           th:text="${major.majorName}">전공 이름</a>
+                    </div>
+                </div>
+
+                <!-- 전공이 없는 경우 학과 게시글 목록 링크 -->
+                <div th:if="${dept.majors == null or dept.majors.size() == 0}">
+                    <div>
+                        <a th:href="@{'/posts/department/' + ${dept.departmentId}}"
+                           th:text="${dept.departmentName}">학과 이름</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}">게시글 제목</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<h1 th:if="${!#strings.isEmpty(majorName)}"
+    th:text="${majorName} + ' 커뮤니티'">
+</h1>
+
+<h1 th:if="${#strings.isEmpty(majorName)}" th:text="${departmentName} + ' 커뮤니티'">
+</h1>
+<!-- certificate.html -->
+<!-- 네비게이션 바 -->
+<div class="navbar">
+    <a th:href="@{/certificates}">메인 페이지</a>
+    <a th:href="@{/write}">글쓰기 페이지</a>
+    <a th:href="@{/register}">회원가입</a>
+    <a th:href="@{/login}">로그인</a>
+</div>
+
+<div class="post-detail">
+    <h2 th:text="${post.title}">제목</h2>
+    <div class="post-info">
+        작성자: <span th:text="${post.writer}"></span><br>
+        작성일: <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></span><br>
+        조회수: <span th:text="${post.viewCount}"></span>
+    </div>
+    <div class="post-content" th:text="${post.content}">내용</div>
+    <a th:href="@{${backUrl}}" class="back-link">목록으로</a>
+</div>
+
+</body>
+</html>

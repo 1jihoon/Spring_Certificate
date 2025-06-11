@@ -14,7 +14,7 @@ body {
 /* 네비게이션 바 */
 .navbar {
     display: flex;
-    justify-content: space-between; /* 좌우 정렬 */
+    justify-content: space-between;
     align-items: center;
     gap: 50px;
     border: 1px solid #1e90ff;
@@ -81,7 +81,6 @@ a.certificate-link {
     text-decoration: none !important;
 }
 
-/* 링크 클릭 시, hover 시에도 색 유지 */
 a.certificate-link:visited,
 a.certificate-link:hover,
 a.certificate-link:active {
@@ -89,8 +88,7 @@ a.certificate-link:active {
     text-decoration: none !important;
 }
 
-
-/* 핵심 레이아웃 */
+/* 상세 페이지 레이아웃 */
 .certificate-section {
     display: flex;
     justify-content: center;
@@ -143,6 +141,7 @@ a.certificate-link:active {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 링크, 도서 타이틀 */
 .link-section h4,
 .image-section h4 {
     width: 100%;
@@ -150,7 +149,6 @@ a.certificate-link:active {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 
 .link-section {
     display: flex;
@@ -176,7 +174,135 @@ a.certificate-link:active {
     transition: background-color 0.2s ease;
 }
 
-
 .link-section a:hover {
     background-color: #d0e8ff;
 }
+
+/* 커뮤니티 글쓰기/게시글 뷰용 스타일 */
+.community-form {
+    width: 450px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.community-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.community-form input[type="text"],
+.community-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.community-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.community-form button,
+.community-form input[type="submit"] {
+    margin-top: 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.community-form button:hover,
+.community-form input[type="submit"]:hover {
+    background-color: #357bd8;
+}
+
+a.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #6c63ff;
+}
+
+a.back-link:hover {
+    text-decoration: underline;
+}
+
+/* 커뮤니티 목록 스타일 */
+.community-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.community-list h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.post-item {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-item a {
+    font-size: 18px;
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-item a:hover,
+.post-item a:visited,
+.post-item a:active {
+    color: #007bff; /* hover나 클릭 이후에도 같은 색 유지 */
+    text-decoration: none;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 커뮤니티 상세 글 보기 스타일 */
+.post-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.post-detail h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.post-info {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    padding-top: 10px;
+    white-space: pre-line;
+}
+

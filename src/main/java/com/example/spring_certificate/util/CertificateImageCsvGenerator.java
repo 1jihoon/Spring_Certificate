@@ -45,7 +45,6 @@ public class CertificateImageCsvGenerator {
         nameMap.put("video_editing", "영상편집전문가");
         nameMap.put("ACP", "ACP");
         nameMap.put("culture_art", "문화예술교육사");
-        //nameMap.put("culture_art_2", "문화예술교육사");
         nameMap.put("nutritionist", "영양사");
         nameMap.put("hygienist", "위생사");
         nameMap.put("medical_information","의료정보관리사");

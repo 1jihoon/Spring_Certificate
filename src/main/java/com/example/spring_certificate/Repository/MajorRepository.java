@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface MajorRepository extends JpaRepository<Major, Long> {
@@ -14,4 +15,7 @@ public interface MajorRepository extends JpaRepository<Major, Long> {
     //순수 쿼리문으론 select * from major where department_id IN (1,2,3) -> 이것이고, major 테이블엔 외래키로
     //department_id가 있으니 그걸 참조해야 한다.
     List<Major> findByDepartmentIds(@Param("departmentIds") List<Long> departmentIds);
+
+    @Query("SELECT d.name FROM Major d WHERE d.id = :id")
+    Optional<String> findNameById(@Param("id") Long id);
 }

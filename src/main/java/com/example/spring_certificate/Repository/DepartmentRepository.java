@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
     /*// DepartmentRepository
@@ -18,4 +19,7 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
 
     @Query("SELECT d FROM Department d WHERE d.faculty IS NULL")
     List<Department> findByFacultyIsNull();*/
+
+    @Query("SELECT d.name FROM Department d WHERE d.id = :id")
+    Optional<String> findNameById(@Param("id") Long id);
 }

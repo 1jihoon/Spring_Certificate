@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${departmentName} + ' 글 목록'">학과명 글 목록</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<h1 th:if="${!#strings.isEmpty(majorName)}"
+    th:text="${majorName} + ' 커뮤니티'">
+</h1>
+
+<h1 th:if="${#strings.isEmpty(majorName)}"
+    th:text="${departmentName} + ' 커뮤니티'">
+</h1>
+
+
+<div class="navbar">
+    <a th:href="@{/certificates}">메인 페이지</a>
+    <a th:href="@{/write}">글쓰기 페이지</a>
+    <a th:href="@{/register}">회원가입</a>
+    <a th:href="@{/login}">로그인</a>
+</div>
+
+<div class="post-list">
+    <div class="community-list">
+
+        <div th:each="post : ${posts}" class="post-item">
+            <a th:href="@{'/post/' + ${post.id}}" th:text="${post.title}"></a>
+            <div class="post-meta">
+                작성자: <span th:text="${post.writer}"></span> |
+                조회수: <span th:text="${post.viewCount}"></span> |
+                작성일: <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
+            </div>
+        </div>
+
+        <div class="post-item">
+        <a th:if="${type == 'department'}"
+           th:href="@{/write/department/{departmentId}(departmentId=${departmentId})}"
+           class="write-button">글쓰기</a>
+
+        <a th:if="${type == 'major'}"
+           th:href="@{/write/major/{majorId}(majorId=${departmentId})}"
+           class="write-button">글쓰기</a>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
