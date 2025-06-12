@@ -7,6 +7,7 @@ import com.example.spring_certificate.Repository.DepartmentRepository;
 import com.example.spring_certificate.Repository.MajorRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,9 @@ import java.util.*;
 
 
 @Component
+@Order(4)
 @RequiredArgsConstructor
-public class CertificateCsvLoader {
+public class CertificateCsvLoader implements DataCsvLoader {
 
     private final CertificateRepository certRepo;
     private final DepartmentRepository deptRepo;
@@ -34,7 +36,7 @@ public class CertificateCsvLoader {
     }
 
     @Transactional
-    public List<Certificate> load() {
+    public void load() {
         List<Certificate> certificates = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new ClassPathResource("csv/certificate.csv").getInputStream(), ENCODING))) {
@@ -89,8 +91,6 @@ public class CertificateCsvLoader {
         } catch (Exception e) {
             System.err.println("Certificate CSV 파싱 오류: " + e.getMessage());
         }
-
-        return certificates;  // ✅ 이제 리스트가 채워짐
     }
 
 }

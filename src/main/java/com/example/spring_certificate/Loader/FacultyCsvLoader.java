@@ -3,6 +3,7 @@ package com.example.spring_certificate.Loader;
 import com.example.spring_certificate.Entity.Faculty;
 import com.example.spring_certificate.Repository.FacultyRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +12,9 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 @Component
+@Order(1)
 @RequiredArgsConstructor
-public class FacultyCsvLoader {
+public class FacultyCsvLoader implements DataCsvLoader {
     private final FacultyRepository facultyRepo;
     private static final Charset ENCODING = Charset.forName("UTF-8");
 

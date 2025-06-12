@@ -6,6 +6,7 @@ import com.example.spring_certificate.Entity.CertificateCharacter;
 import com.example.spring_certificate.Repository.CertificateCharacterRepository;
 import com.example.spring_certificate.Repository.CertificateRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Order(7)
 @RequiredArgsConstructor
-public class CertificateCharacterCsvLoader {
+public class CertificateCharacterCsvLoader implements DataCsvLoader {
     private final CertificateRepository certificateRepository;
     private final CertificateCharacterRepository characterRepository;
 
