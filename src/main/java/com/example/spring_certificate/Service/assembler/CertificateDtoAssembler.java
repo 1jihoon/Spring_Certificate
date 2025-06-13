@@ -8,7 +8,6 @@ import java.util.List;
 
 @Component
 public class CertificateDtoAssembler {
-
     public CertificateDto toDto(Certificate cert) {
         CertificateDto dto = new CertificateDto();
         dto.setCertificateId(cert.getId());
@@ -17,33 +16,18 @@ public class CertificateDtoAssembler {
 
         // ImageDto 매핑
         List<CertificateImageDto> imageDtos = cert.getImages().stream()
-                .map(img -> {
-                    CertificateImageDto imgDto = new CertificateImageDto(img.getUrl(), img.getAltText());
-                    imgDto.setCertificateImageId(img.getId());
-                    imgDto.setUrl(img.getUrl());
-                    imgDto.setAltText(img.getAltText());
-                    return imgDto;
-                }).toList();
+                .map(img -> new CertificateImageDto(img.getUrl(), img.getAltText()))
+                .toList();
 
         // LinkDto 매핑
         List<CertificateLinkDto> linkDtos = cert.getLinks().stream()
-                .map(link -> {
-                    CertificateLinkDto linkDto = new CertificateLinkDto(link.getUrl(),link.getDescription());
-                    linkDto.setCertificateLinkId(link.getId());
-                    linkDto.setUrl(link.getUrl());
-                    linkDto.setDescription(link.getDescription());
-                    return linkDto;
-                }).toList();
+                .map(link -> new CertificateLinkDto(link.getUrl(),link.getDescription()))
+                .toList();
 
         //CharacterDto 매핑
         List<CertificateCharacterDto> characterDtos = cert.getCharacters().stream()
-                        .map(Character -> {
-                            CertificateCharacterDto characterDto = new CertificateCharacterDto(Character.getUrl(), Character.getAltText());
-                            characterDto.setCertificateCharacterId(Character.getId());
-                            characterDto.setUrl(Character.getUrl());
-                            characterDto.setAltText(Character.getAltText());
-                            return characterDto;
-                        }).toList();
+                        .map(Character -> new CertificateCharacterDto(Character.getUrl(), Character.getAltText()))
+                        .toList();
 
         dto.setImages(imageDtos);
         dto.setLinks(linkDtos);

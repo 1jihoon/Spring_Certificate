@@ -27,9 +27,6 @@ public class Certificate {
     @JoinColumn(name = "department_id", nullable = true)
     private Department department;
 
-   /* @ManyToMany(mappedBy = "certificates")
-    private Set<Major> majors = new HashSet<>();*/
-
 
     @OneToMany(mappedBy = "certificate", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CertificateLink> links = new ArrayList<>();
