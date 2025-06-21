@@ -1,5 +1,6 @@
 package com.example.spring_certificate.Entity;
 
+import com.example.spring_certificate.Entity.CertificateEntity.Certificate;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

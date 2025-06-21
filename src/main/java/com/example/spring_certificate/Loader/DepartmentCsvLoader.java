@@ -1,6 +1,7 @@
 package com.example.spring_certificate.Loader;
 
 import com.example.spring_certificate.Entity.Department;
+import com.example.spring_certificate.Loader.DataLoader.DataCsvLoader;
 import com.example.spring_certificate.Repository.DepartmentRepository;
 import com.example.spring_certificate.Repository.FacultyRepository;
 import lombok.RequiredArgsConstructor;

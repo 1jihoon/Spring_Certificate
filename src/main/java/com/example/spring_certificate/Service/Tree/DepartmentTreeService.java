@@ -1,10 +1,10 @@
 package com.example.spring_certificate.Service.Tree;
 
 import com.example.spring_certificate.Dto.DepartDto;
-import com.example.spring_certificate.Entity.Certificate;
+import com.example.spring_certificate.Entity.CertificateEntity.Certificate;
 import com.example.spring_certificate.Entity.Department;
 import com.example.spring_certificate.Entity.Major;
-import com.example.spring_certificate.Repository.CertificateRepository;
+import com.example.spring_certificate.Repository.CertificateRepository.CertificateRepository;
 import com.example.spring_certificate.Repository.MajorRepository;
 import com.example.spring_certificate.Service.assembler.DepartmentDtoAssembler;
 import lombok.RequiredArgsConstructor;

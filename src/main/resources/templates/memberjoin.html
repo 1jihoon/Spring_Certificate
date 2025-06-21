@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/register/registerlayout}">
 <head>
     <title>회원가입</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<h1>회원가입</h1>
+<body class="form-page">
 
+<!-- 타이틀 -->
+<h1 class="title">자격증 게시판</h1>
+
+<!-- 네비게이션 -->
 <div class="navbar">
     <a th:href="@{/certificates}">메인 페이지</a>
     <a th:href="@{/write}">글쓰기 페이지</a>
@@ -14,41 +19,48 @@
     <a th:href="@{/login}">로그인</a>
 </div>
 
-<div th:if="${errorMessage}" style="color:red;">
-    <p th:text="${errorMessage}"></p>
+<!-- 폼 컨테이너 -->
+<div class="form-container">
+    <h2>회원가입</h2>
+
+    <div th:if="${errorMessage}" style="color:red;">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <form id="registerForm" action="/register" method="post" th:object="${member}">
+        <label>ID:
+            <input type="text" th:field="*{id}" id="idInput" />
+            <button type="button" onclick="checkDuplicate('id')">중복 확인</button>
+            <span id="idResult" style="margin-left: 10px;"></span>
+        </label>
+
+        <label>Password:
+            <input type="password" th:field="*{password}" id="passwordInput" />
+            <button type="button" onclick="checkDuplicate('password')">중복 확인</button>
+            <span id="passwordResult" style="margin-left: 10px;"></span>
+        </label>
+
+        <label>Name:
+            <input type="text" th:field="*{name}" />
+        </label>
+
+        <label>Gender:
+            <select th:field="*{gender}">
+                <option value="">성별 선택</option>
+                <option value="남자">남자</option>
+                <option value="여자">여자</option>
+            </select>
+        </label>
+
+        <label>Email:
+            <input type="email" th:field="*{email}" id="emailInput" />
+            <button type="button" onclick="checkDuplicate('email')">중복 확인</button>
+            <span id="emailResult" style="margin-left: 10px;"></span>
+        </label>
+
+        <input type="submit" id="submitBtn" value="회원가입" disabled />
+    </form>
 </div>
-
-<form id="registerForm" action="/register" method="post" th:object="${member}">
-    <label>ID:
-        <input type="text" th:field="*{id}" id="idInput" />
-        <button type="button" onclick="checkDuplicate('id')">중복 확인</button>
-        <span id="idResult" style="margin-left: 10px;"></span>
-    </label><br>
-
-    <label>Password:
-        <input type="password" th:field="*{password}" id="passwordInput" />
-        <button type="button" onclick="checkDuplicate('password')">중복 확인</button>
-        <span id="passwordResult" style="margin-left: 10px;"></span>
-    </label><br>
-
-    <label>Name: <input type="text" th:field="*{name}" /></label><br>
-
-    <label>Gender:
-        <select th:field="*{gender}">
-            <option value="">성별 선택</option>
-            <option value="남자">남자</option>
-            <option value="여자">여자</option>
-        </select>
-    </label><br>
-
-    <label>Email:
-        <input type="email" th:field="*{email}" id="emailInput" />
-        <button type="button" onclick="checkDuplicate('email')">중복 확인</button>
-        <span id="emailResult" style="margin-left: 10px;"></span>
-    </label><br>
-
-    <button type="submit" id="submitBtn" disabled>회원가입</button>
-</form>
 
 <script>
     const checkStatus = { id: false, password: false, email: false };

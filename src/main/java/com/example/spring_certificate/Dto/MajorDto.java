@@ -1,5 +1,6 @@
 package com.example.spring_certificate.Dto;
 
+import com.example.spring_certificate.Dto.CertificateDto.CertificateDto;
 import lombok.Getter;
 import lombok.Setter;
 

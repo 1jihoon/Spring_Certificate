@@ -1,6 +1,7 @@
 package com.example.spring_certificate.Loader;
 
 import com.example.spring_certificate.Entity.Faculty;
+import com.example.spring_certificate.Loader.DataLoader.DataCsvLoader;
 import com.example.spring_certificate.Repository.FacultyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.annotation.Order;

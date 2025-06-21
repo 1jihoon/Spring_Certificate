@@ -1,7 +1,10 @@
 package com.example.spring_certificate.Service.assembler;
 
-import com.example.spring_certificate.Dto.*;
-import com.example.spring_certificate.Entity.*;
+import com.example.spring_certificate.Dto.CertificateDto.CertificateCharacterDto;
+import com.example.spring_certificate.Dto.CertificateDto.CertificateDto;
+import com.example.spring_certificate.Dto.CertificateDto.CertificateImageDto;
+import com.example.spring_certificate.Dto.CertificateDto.CertificateLinkDto;
+import com.example.spring_certificate.Entity.CertificateEntity.Certificate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

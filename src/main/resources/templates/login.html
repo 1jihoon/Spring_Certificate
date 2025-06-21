@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/login/loginlayout}">
 <head>
     <title>로그인</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<h1>로그인</h1>
+<body class="form-page">
 
+<!-- 타이틀 -->
+<h1 class="title">자격증 게시판</h1>
+
+<!-- 상단 네비게이션 -->
 <div class="navbar">
     <a th:href="@{/certificates}">메인 페이지</a>
     <a th:href="@{/write}">글쓰기 페이지</a>
@@ -14,15 +19,27 @@
     <a th:href="@{/login}">로그인</a>
 </div>
 
-<!-- 🔽 로그인 실패 시 에러 메시지 표시 -->
-<div th:if="${errorMessage}" style="color:red; font-weight:bold; margin-bottom:10px;">
-    <p th:text="${errorMessage}"></p>
+<!-- 로그인 폼 영역 -->
+<div class="form-container">
+    <h2>로그인</h2>
+
+    <!-- 에러 메시지 -->
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <!-- 로그인 폼 -->
+    <form action="/login" method="post" th:object="${loginDto}">
+        <label>ID:</label>
+        <input type="text" th:field="*{id}" />
+
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" />
+
+        <input type="submit" value="로그인" />
+    </form>
 </div>
 
-<form action="/login" method="post" th:object="${loginDto}">
-    <label>ID: <input type="text" th:field="*{id}" /></label><br>
-    <label>Password: <input type="password" th:field="*{password}" /></label><br>
-    <button type="submit">로그인</button>
-</form>
 </body>
+
 </html>

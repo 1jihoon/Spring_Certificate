@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/img/icon-192.png" />
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js");
+        }
+    </script>
+    <link rel="stylesheet" href="/style.css">
+    <title>자격증 게시판</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 class="title">자격증 게시판</h1>
+
+    <!-- certificate.html -->
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+        <a th:href="@{/certificates}">메인 페이지</a>
+        <a th:href="@{/write}">글쓰기 페이지</a>
+        <a th:href="@{/register}">회원가입</a>
+        <a th:href="@{/login}">로그인</a>
+    </div>
+
+    <!-- 로그인 상태 확인 -->
+    <span th:if="${session.loginId != null}">
+    <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
+    <a th:href="@{/logout}">로그아웃</a>
+</span>
+
+    <div th:if="${accessDeniedMessage}">
+        <p th:text="${accessDeniedMessage}" style="color: red; font-weight: bold;"></p>
+    </div>
+
+    <!-- 콘텐츠: 학부 -> 학과 -> 전공/자격증 -->
+    <div class="container" th:each="faculty, fStat : ${faculties}">
+        <div class="faculty-box">
+            <h2 th:text="${faculty.facultyName}">학부 이름</h2>
+
+            <div th:each="dept, dStat : ${faculty.departments}">
+
+                <!-- 전공이 없는 학과 (null 안전 포함) -->
+                <div th:if="${dept.majors == null or dept.majors.size() == 0}">
+                    <h4 th:text="${dept.departmentName}"
+                        th:onclick="'toggleCertificates(\'cert-' + ${fStat.index} + '-' + ${dStat.index} + '\')'"
+                        style="cursor: pointer;">학과 이름</h4>
+
+                    <div th:id="'cert-' + ${fStat.index} + '-' + ${dStat.index}"
+                         style="display: none; padding-left: 5px;">
+                        <div th:replace="certificate/list :: certificateList(${dept.certificates})"></div>
+                    </div>
+                </div>
+
+
+
+                <!-- 전공이 있는 학과 -->
+                <div th:if="${dept.majors.size() > 0}">
+                    <div th:each="major, mStat : ${dept.majors}">
+                        <h4 th:text="${major.majorName}"
+                            th:onclick="'toggleCertificates(\'cert-' + ${fStat.index} + '-' + ${dStat.index} + '-' + ${mStat.index} + '\')'"
+                            style="cursor: pointer;">전공 이름</h4>
+
+                        <div th:id="'cert-' + ${fStat.index} + '-' + ${dStat.index} + '-' + ${mStat.index}"
+                             style="display: none; padding-left: 5px;">
+                            <div th:replace="certificate/list :: certificateList(${major.certificates})"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS: 토글 함수 -->
+    <script>
+        function toggleCertificates(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/detail/detaillayout}">
 <head>
     <meta charset="UTF-8">
     <title th:text="${certificate.certificateName} + ' 상세 정보'">자격증 상세</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-
 <h1 class="title">자격증 게시판</h1>
 
 <!-- detail.html -->
@@ -23,7 +24,6 @@
         <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
         <a th:href="@{/logout}">로그아웃</a>
 </span>
-
 
 <div class="certificate-section">
     <div class="certificate-character" th:if="${certificate.characters != null and #lists.size(certificate.characters) > 0}">
@@ -57,4 +57,5 @@
 
 
 </body>
+
 </html>

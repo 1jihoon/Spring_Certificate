@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/write/writelayout}">
 <head>
     <meta charset="UTF-8">
     <title>글쓰기</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
-<body>
-<h1>글쓰기</h1>
+<body class="form-page">
 
+<!-- 타이틀 -->
+<h1 class="title">자격증 게시판</h1>
+
+<!-- 네비게이션 -->
 <div class="navbar">
     <a th:href="@{/certificates}">메인 페이지</a>
     <a th:href="@{/write}">글쓰기 페이지</a>
@@ -15,19 +20,74 @@
     <a th:href="@{/login}">로그인</a>
 </div>
 
-<form class="community-form" th:action="@{'/write/' + ${type} + '/' + ${departmentId}}" method="post" th:object="${communityDto}">
-    <div>
-        <label for="title">제목</label>
-        <input type="text" id="title" th:field="*{title}" required>
-    </div>
-    <div>
-        <label for="content">내용</label>
-        <textarea id="content" th:field="*{content}" rows="10" required></textarea>
-    </div>
-    <div>
-        <button type="submit">작성 완료</button>
-    </div>
-</form>
+<!-- 폼 컨테이너 -->
+<div class="form-container">
+    <h2 th:text="${communityDto.id != null ? '게시글 수정' : '글쓰기'}"></h2>
+
+    <!-- 수정 폼 -->
+    <form th:if="${communityDto.id != null}"
+          th:action="@{'/post/edit/' + ${communityDto.id}}"
+          method="post"
+          th:object="${communityDto}"
+          enctype="multipart/form-data">
+
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{departmentId}" />
+        <input type="hidden" th:field="*{majorId}" />
+        <input type="hidden" th:field="*{writer}" />
+
+        <label>제목
+            <input type="text" th:field="*{title}" required />
+        </label>
+
+        <label>내용
+            <textarea th:field="*{content}" rows="10" required></textarea>
+        </label>
+
+        <label>새 이미지 첨부
+            <input type="file" name="newImages" multiple />
+        </label>
+
+        <div th:if="${communityDto.existingImages != null}">
+            <p>기존 이미지:</p>
+            <div th:each="img : ${communityDto.existingImages}">
+                <img th:src="@{'/uploads/' + ${img.fileName}}" style="max-width: 200px;" />
+                <label>
+                    <input type="checkbox" name="deleteImageIds" th:value="${img.id}" />
+                    삭제
+                </label>
+            </div>
+        </div>
+
+        <input type="submit" value="수정 완료" />
+    </form>
+
+    <!-- 작성 폼 -->
+    <form th:if="${communityDto.id == null}"
+          th:action="@{'/write/' + ${type} + '/' + ${departmentId}}"
+          method="post"
+          th:object="${communityDto}"
+          enctype="multipart/form-data">
+
+        <input type="hidden" th:field="*{departmentId}" />
+        <input type="hidden" th:field="*{majorId}" />
+        <input type="hidden" th:field="*{writer}" />
+
+        <label>제목
+            <input type="text" th:field="*{title}" required />
+        </label>
+
+        <label>내용
+            <textarea th:field="*{content}" rows="10" required></textarea>
+        </label>
+
+        <label>이미지 첨부
+            <input type="file" name="newImages" multiple />
+        </label>
+
+        <input type="submit" value="작성 완료" />
+    </form>
+</div>
 
 </body>
 </html>

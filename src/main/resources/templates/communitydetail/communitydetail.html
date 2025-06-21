@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/img/icon-192.png" />
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js");
+        }
+    </script>
+    <link rel="stylesheet" href="/style.css">
+    <title>자격증 게시판</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 th:if="${!#strings.isEmpty(majorName)}"
+        th:text="${majorName} + ' 커뮤니티'">
+    </h1>
+
+    <h1 th:if="${#strings.isEmpty(majorName)}" th:text="${departmentName} + ' 커뮤니티'">
+    </h1>
+    <!-- certificate.html -->
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+        <a th:href="@{/certificates}">메인 페이지</a>
+        <a th:href="@{/write}">글쓰기 페이지</a>
+        <a th:href="@{/register}">회원가입</a>
+        <a th:href="@{/login}">로그인</a>
+    </div>
+
+    <div class="post-detail">
+        <h2 th:text="${post.title}">제목</h2>
+        <div class="post-info">
+            작성자: <span th:text="${post.writer}"></span><br>
+            작성일: <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></span><br>
+            조회수: <span th:text="${post.viewCount}"></span>
+        </div>
+        <div class="post-content" th:text="${post.content}">내용</div>
+
+        <!-- 이미지 출력 -->
+        <!-- 다중 이미지 구조에 맞춰 수정 -->
+        <div th:if="${post.existingImages != null}">
+            <div th:each="image : ${post.existingImages}">
+                <img th:src="@{'/uploads/' + ${image.fileName}}" alt="게시글 이미지" style="max-width: 300px;" />
+            </div>
+        </div>
+
+
+        <!-- 수정/삭제 버튼 (본인일 때만 보이기) -->
+        <div th:if="${session.loginId == post.writer}" class="post-actions">
+            <a th:href="@{/post/edit/{id}(id=${post.id})}" class="btn btn-edit">✏ 수정</a>
+            <form th:action="@{/post/delete/{id}(id=${post.id})}" method="post"
+                  onsubmit="return confirm('정말 삭제하시겠습니까?')" style="display: inline;">
+                <button type="submit" class="btn btn-delete">🗑 삭제</button>
+            </form>
+        </div>
+
+
+        <div class="comment-section" style="margin-top: 40px;">
+            <h2>댓글</h2>
+            <ul>
+                <li th:each="comment : ${comments}" th:id="'comment-' + ${comment.id}">
+                    <div>
+                        <strong th:text="${comment.writer}"></strong>:
+
+                        <!-- 일반 보기 -->
+                        <span th:if="${loginId != comment.writer}" th:text="${comment.content}"></span>
+                        <span th:if="${loginId == comment.writer}" th:id="'content-' + ${comment.id}" th:text="${comment.content}"></span>
+
+                        <!-- 수정 폼 -->
+                        <form th:if="${loginId == comment.writer}" th:id="'editForm-' + ${comment.id}"
+                              th:action="@{'/post/comment/' + ${comment.id} + '/edit'}" method="post" style="display: none;">
+                            <textarea name="content" rows="2" cols="50" th:text="${comment.content}"></textarea>
+                            <br>
+                            <button type="submit">저장</button>
+                            <button type="button" th:onclick="'cancelEdit(' + ${comment.id} + ')'" style="margin-left: 5px;">취소</button>
+                        </form>
+                    </div>
+
+                    <div style="font-size: 0.9em; color: gray;">
+                        <span th:text="${#temporals.format(comment.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
+                    </div>
+
+                    <div th:if="${loginId == comment.writer}" th:id="'commentButtons-' + ${comment.id}">
+                        <button type="button" th:onclick="'editComment(' + ${comment.id} + ')'">수정</button>
+                        <form th:action="@{'/post/comment/' + ${comment.id} + '/delete'}" method="post" style="display:inline;">
+                            <button type="submit" onclick="return confirm('댓글을 삭제하시겠습니까?')">삭제</button>
+                        </form>
+                    </div>
+
+                    <hr>
+                </li>
+            </ul>
+            <form th:action="@{'/post/' + ${post.id} + '/comment'}" method="post">
+                <textarea th:field="${commentDto.content}" rows="3" cols="60" placeholder="댓글을 입력하세요" required></textarea>
+                <br>
+                <button type="submit">댓글 작성</button>
+            </form>
+
+            <!-- 뒤로가기 -->
+            <a th:href="@{${backUrl}}" class="back-link">목록으로</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function editComment(id) {
+        document.getElementById('editForm-' + id).style.display = 'block';
+        document.getElementById('content-' + id).style.display = 'none';
+        document.getElementById('commentButtons-' + id).style.display = 'none';
+    }
+
+    function cancelEdit(id) {
+        document.getElementById('editForm-' + id).style.display = 'none';
+        document.getElementById('content-' + id).style.display = 'inline';
+        document.getElementById('commentButtons-' + id).style.display = 'block';
+    }
+</script>
+</body>
+</html>

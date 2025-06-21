@@ -1,9 +1,9 @@
 package com.example.spring_certificate.Service.assembler;
 
-import com.example.spring_certificate.Dto.CertificateDto;
+import com.example.spring_certificate.Dto.CertificateDto.CertificateDto;
 import com.example.spring_certificate.Dto.DepartDto;
 import com.example.spring_certificate.Dto.MajorDto;
-import com.example.spring_certificate.Entity.Certificate;
+import com.example.spring_certificate.Entity.CertificateEntity.Certificate;
 import com.example.spring_certificate.Entity.Department;
 import com.example.spring_certificate.Entity.Major;
 import lombok.RequiredArgsConstructor;
