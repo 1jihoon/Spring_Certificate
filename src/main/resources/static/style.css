@@ -112,6 +112,28 @@ body {
     padding: 0 20px;
 }
 
+/* 상단 로그인/로그아웃 영역 정렬 */
+.session-info {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+
+/* 로그아웃 링크 스타일 */
+.session-info a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.session-info a:hover {
+    color: #444;
+}
+
 /* ========================================
    공통 글래스모피즘 스타일 (중복 제거)
    ======================================== */
@@ -467,7 +489,7 @@ body.register-page .container {
 
 .link-items a {
     padding: 15px 20px;
-    background: rgba(102, 126, 234, 0.1);
+    background: white;
     border: 1px solid rgba(102, 126, 234, 0.2);
     border-radius: 12px;
     color: black;
@@ -509,8 +531,6 @@ body.register-page .container {
     transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* ========================================
    커뮤니티 페이지 스타일
@@ -824,3 +844,19 @@ body.form-page .form-container input[type="submit"]:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
 }
+
+/* 목록으로 링크 고정 스타일 */
+.back-link {
+    color: #1a73e8; /* 원하는 파란색 (Google Blue 계열) */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:visited,
+.back-link:hover,
+.back-link:active,
+.back-link:focus {
+    color: #1a73e8;       /* 방문해도 클릭해도 색 고정 */
+    text-decoration: none; /* 밑줄 제거 유지 */
+}
+

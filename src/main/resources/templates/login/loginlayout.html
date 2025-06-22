@@ -30,24 +30,24 @@
 <div class="form-container">
 
     <div layout:fragment="content">
-    <h2>로그인</h2>
+        <h2>로그인</h2>
 
-    <!-- 에러 메시지 -->
-    <div th:if="${errorMessage}" class="error-message">
-        <p th:text="${errorMessage}"></p>
+        <!-- 에러 메시지 -->
+        <div th:if="${errorMessage}" class="error-message">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+        <!-- 로그인 폼 -->
+        <form action="/login" method="post" th:object="${loginDto}">
+            <label>ID:</label>
+            <input type="text" th:field="*{id}" />
+
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" />
+
+            <input type="submit" value="로그인" />
+        </form>
     </div>
-
-    <!-- 로그인 폼 -->
-    <form action="/login" method="post" th:object="${loginDto}">
-        <label>ID:</label>
-        <input type="text" th:field="*{id}" />
-
-        <label>Password:</label>
-        <input type="password" th:field="*{password}" />
-
-        <input type="submit" value="로그인" />
-    </form>
-</div>
 </div>
 </body>
 </html>

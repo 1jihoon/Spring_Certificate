@@ -29,9 +29,10 @@
     </div>
     <!--정적일땐 그냥 href를 쓰지만 동적으로 써서 링크가 바뀔 우려가 있을 땐 th:href로 쓰고 되도록이면 언제든 쓸 수 있게 이 습관을 기르자 -->
 
-    <span th:if="${session.loginId != null}">
-        <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
-        <a th:href="@{/logout}">로그아웃</a>
+    <!-- 로그인 상태 정보 -->
+    <span class="session-info" th:if="${session.loginId != null}">
+    <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
+    <a th:href="@{/logout}">로그아웃</a>
 </span>
 
 

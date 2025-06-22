@@ -19,13 +19,13 @@
     <a th:href="@{/login}">로그인</a>
 </div>
 
-<!-- 로그인 상태 확인 -->
-<span th:if="${session.loginId != null}">
+<!-- 로그인 상태 정보 -->
+<span class="session-info" th:if="${session.loginId != null}">
     <span th:text="'환영합니다, ' + ${session.loginId} + '님!'"></span>
     <a th:href="@{/logout}">로그아웃</a>
 </span>
 
-<div th:if="${accessDeniedMessage}">
+<div th:if="${accessDeniedMessage}" style="text-align: center; margin-top: -10px; margin-bottom: 10px;">
     <p th:text="${accessDeniedMessage}" style="color: red; font-weight: bold;"></p>
 </div>
 

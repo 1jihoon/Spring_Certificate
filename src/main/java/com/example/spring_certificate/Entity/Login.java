@@ -14,7 +14,6 @@ public class Login {
     @Column(unique = true)
     private String id;
 
-    @Column(unique=true)
     private String password;
 
     private String name;

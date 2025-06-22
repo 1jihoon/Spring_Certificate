@@ -25,10 +25,6 @@ public class LoginService {
             throw new IllegalStateException("❗ 이미 사용 중인 ID입니다.");
         }
 
-        if(loginRepository.existsByPassword(loginDto.getPassword())){
-            throw new IllegalStateException("❗ 이미 사용 중인 비밀번호입니다.");
-        }
-
         if(loginRepository.existsByEmail(loginDto.getEmail())){
             throw new IllegalStateException("❗ 이미 사용 중인 이메일입니다.");
         }

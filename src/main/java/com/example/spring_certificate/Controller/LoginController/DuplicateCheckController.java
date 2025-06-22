@@ -18,7 +18,7 @@ public class DuplicateCheckController {
     public Map<String, Boolean> checkDuplicate(@RequestParam String type, @RequestParam String value){
         boolean exists = switch(type){
             case "id" -> loginRepository.existsById(value);
-            case "password" -> loginRepository.existsByPassword(value);
+            //case "password" -> loginRepository.existsByPassword(value);
             case "email" -> loginRepository.existsByEmail(value);
             default -> false;
         };
