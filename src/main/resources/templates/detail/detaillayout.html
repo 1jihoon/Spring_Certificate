@@ -36,34 +36,41 @@
 
 
     <div class="certificate-section">
-        <div class="certificate-character" th:if="${certificate.characters != null and #lists.size(certificate.characters) > 0}">
-            <h4>아이콘</h4>
+        <div class="certificate-card">
             <div th:each="img : ${certificate.characters}">
-                <img th:src="@{${img.url}}" th:alt="${img.altText}" class="certificate-character.img"/>
-                <small style="font-size: 10px; color: gray;">출처: FlatIcons.com</small>
+                <img th:src="@{${img.url}}" th:alt="${img.altText}" />
+                <div style="font-size: 10px; color: gray;">출처: Flaticons.com</div>
             </div>
         </div>
 
-        <div class="certificate-info">
-            <h4>소개</h4>
-            <h2 th:text="${certificate.certificateName}">자격증 이름</h2>
+        <div class="certificate-card">
+            <h3 th:text="${certificate.certificateName}">자격증 이름</h3>
             <p th:text="${certificate.detail}">자격증 설명</p>
         </div>
     </div>
 
+
+    <!-- 관련 링크 섹션 -->
     <div class="link-section" th:if="${certificate.links != null and #lists.size(certificate.links) > 0}">
-        <h4>관련 링크</h4>
-        <div th:each="link : ${certificate.links}">
-            <a th:href="@{${link.url}}" th:text="${link.description}" target="_blank">링크</a>
+        <h3 class="section-title">관련 링크</h3>  <!-- 제목을 별도 중앙 정렬 -->
+        <div class="link-items">
+            <a th:each="link : ${certificate.links}"
+               th:href="@{${link.url}}"
+               th:text="${link.description}"
+               target="_blank">링크</a>
         </div>
     </div>
 
+    <!-- 도서 이미지 섹션 -->
     <div class="image-section" th:if="${certificate.images != null and #lists.size(certificate.images) > 0}">
-        <h4>도서 이미지</h4>
-        <div th:each="img : ${certificate.images}">
-            <img th:src="@{${img.url}}" th:alt="${img.altText}" />
+        <h3 class="section-title">도서 이미지</h3> <!-- 제목을 별도 중앙 정렬 -->
+        <div class="image-items">
+            <img th:each="img : ${certificate.images}"
+                 th:src="@{${img.url}}"
+                 th:alt="${img.altText}" />
         </div>
     </div>
+
 
 </div>
 </body>
